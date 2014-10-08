@@ -40,7 +40,7 @@ function Config (app) {
 	app.use(bodyParser());
 	app.use(cookieParser());
 	app.use(session({ 
-	  secret: 'haohcraft-lemon-to-lemonade',
+	  secret: 'haohcraft',
 	  cookie: {maxAge: 24*60*60*1000}
 
 	})); // session secret

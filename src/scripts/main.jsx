@@ -10,10 +10,10 @@ require('flat-ui/less/flat-ui.less');
 require('zepto/zepto.min.js');
 require('styles/main.less');
 
-var Lemonade = require('./components/Lemonade.jsx');
+var Main = require('./components/Main.jsx');
 
 React.renderComponent(
-	<Lemonade />, 
+	<Main />, 
 	document.getElementById('app')
 );
 

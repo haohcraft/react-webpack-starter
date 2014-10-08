@@ -15,7 +15,6 @@ var Header = React.createClass({
 					<h1 className="demo-section-title">
 							{this.props.title}
 					</h1>
-					<small>Lemon To Lemonade</small>
 		        </div>
 		    </div>
 		);
