@@ -1,7 +1,9 @@
 #React-webpack-starter
 
-##Get Start
+##Quick Start
 
-   # npm install
-   # bower install
-   # nodemon app.js
+       # npm install
+
+       # bower install
+
+       # nodemon app.js
