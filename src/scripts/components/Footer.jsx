@@ -2,7 +2,7 @@
  * @jsx React.DOM
  */
 
-
+var React = require('react');
 require('styles/footer.less');
 
 var Footer = React.createClass({

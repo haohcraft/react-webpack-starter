@@ -1,7 +1,7 @@
 /**
  * @jsx React.DOM
  */
-
+var React = require('react');
 require('styles/header.less');
 
 

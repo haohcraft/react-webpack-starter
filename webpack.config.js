@@ -7,7 +7,7 @@ module.exports = {
   debug: true,
   devtool: "source-map",
   // We are watching in the gulp.watch, so tell webpack not to watch
-  watch: false,
+  watch: true,
   // watchDelay: 300,
   output: {
     path: path.join(__dirname, "dist", "assets"),

@@ -3,10 +3,9 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
-var clean = require('gulp-clean');
+var rimraf = require('gulp-rimraf');
 var watch = require('gulp-watch');
 var rev = require('gulp-rev');
-var tiny_lr = require('tiny-lr');
 var webpack = require("webpack");
 var server = require('gulp-express');
 
@@ -29,7 +28,7 @@ var vendorPaths = ['es5-shim/es5-sham.js', 'es5-shim/es5-shim.js', 'bootstrap/di
 
 gulp.task('clean', function() {
     gulp.src('dist', {read: false})
-      .pipe(clean())
+      .pipe(rimraf())
 });
 
 // # main.less should @include any other CSS you want
@@ -73,11 +72,11 @@ gulp.task('dev',['build'], function() {
 
 
 
-    gulp.watch(['./app.js', 'routes/**/*'], [server.notify, server.run]);
+    gulp.watch(['app.js', 'routes/**/*'], [server.notify, server.run]);
     // When /src changes, fire off a rebuild
-    gulp.watch('./src/**/*', [server.notify,'build']);
+    gulp.watch('src/**/*', [server.notify,'build']);
     // When /dist changes, tell the browser to reload
-    gulp.watch('./dist/**/*', function(evt){
+    gulp.watch('dist/**/*', function(evt){
     	gutil.log(gutil.colors.cyan(evt.path), 'change');
     });
 

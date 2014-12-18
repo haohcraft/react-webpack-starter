@@ -1,7 +1,7 @@
 /**
  * @jsx React.DOM
  */
-
+var React = require('react');
 var Header = require("./Header.jsx");
 var Footer = require("./Footer.jsx");
 
