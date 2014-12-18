@@ -6,7 +6,6 @@
 
 module.exports = Routes;
 
-var ContentApi = require('./api/content.js');
 function Routes (app) {
 	
 	app.get('/*', function(req, res, next) {
@@ -21,9 +20,4 @@ function Routes (app) {
 		res.render("pages/home");
 	});
 
-	app.post('/api/content/new', function(req, res, next) {
-
-		var api = new ContentApi();
-		api.createNew(req, res, next);
-	});
 }
