@@ -1,6 +1,7 @@
-/**
- * @jsx React.DOM
- */
+/*============================================
+=            Component for Footer            =
+============================================*/
+"use strict";
 
 var React = require('react');
 require('styles/footer.less');
@@ -20,3 +21,7 @@ var Footer = React.createClass({
 });
 
 module.exports = Footer;
+
+
+/*-----  End of Component for Footer  ------*/
+

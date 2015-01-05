@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
-var rimraf = require('gulp-rimraf');
+var del = require('del');
 var watch = require('gulp-watch');
 var rev = require('gulp-rev');
 var webpack = require("webpack");
@@ -28,7 +28,7 @@ var vendorPaths = ['es5-shim/es5-sham.js', 'es5-shim/es5-shim.js', 'bootstrap/di
 
 gulp.task('clean', function() {
     gulp.src('dist', {read: false})
-      .pipe(rimraf())
+      .pipe(del())
 });
 
 // # main.less should @include any other CSS you want

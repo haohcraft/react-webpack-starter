@@ -1,16 +1,36 @@
-
-/**
- * @jsx React.DOM
- */
+/*==============================================
+=            Main Enter for the app            =
+==============================================*/
+"use strict";
 
 // Bring in jQuery and React as a Bower component in the global namespace
-var React = require('react');
+require('flat-ui/dist/css/flat-ui.css');
 require('styles/main.less');
 
-var Main = require('./components/Main.jsx');
+var React = require('react');
+// Using react-route
+var Router = require('react-router');
+var Route = Router.Route
+	, DefaultRoute = Router.DefaultRoute
+	, RouteHandler = Router.RouteHandler
+	, HistoryLocation = Router.HistoryLocation;
 
-React.renderComponent(
-	<Main />, 
-	document.getElementById('app')
+
+var routes = (
+	<Route handler={require('./components/Main.jsx')} path="/">
+
+		<DefaultRoute name="home" handler={require('./components/Home.jsx')} />
+	</Route>
 );
+
+Router.run(routes, HistoryLocation, function (Handler) {
+  React.render(<Handler/>, document.getElementById('app'));
+});
+
+
+// Attached React to the window, for debug purpose
+window.React = React;
+
+
+/*-----  End of Main Enter for the app  ------*/
 

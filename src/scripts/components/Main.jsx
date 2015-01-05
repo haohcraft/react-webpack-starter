@@ -1,7 +1,13 @@
-/**
- * @jsx React.DOM
- */
+/*==========================================
+=            Component for Main            =
+==========================================*/
+
+"use strict";
+
 var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+
 var Header = require("./Header.jsx");
 var Footer = require("./Footer.jsx");
 
@@ -10,8 +16,8 @@ var Main = React.createClass({
   render: function() {
     return (
       <div className="Main">
-        <Header title="React-webpack-starter" />
-
+        <Header/>
+        <RouteHandler/>
         <Footer />
       </div>
     );
@@ -20,3 +26,5 @@ var Main = React.createClass({
 });
 
 module.exports = Main;
+/*-----  End of Component for Main  ------*/
+

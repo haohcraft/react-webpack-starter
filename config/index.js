@@ -13,6 +13,7 @@ var session = require('express-session');
 var errorHandler = require('errorhandler');
 var flash    = require('connect-flash');
 var favicon = require('serve-favicon');
+var compress = require('compression');
 var config = {};
 
 
@@ -37,6 +38,7 @@ function Config (app) {
 	app.engine('html', require('hbs').__express);
 
 	app.use(morgan('dev'));
+	app.use(compress()); 
 	app.use(bodyParser());
 	app.use(cookieParser());
 	app.use(session({ 

@@ -1,5 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
+var compression = require('compression-webpack-plugin');
+
 module.exports = {
   // This is the main file that should include all other JS files
   entry: "./src/scripts/main.jsx",
@@ -29,7 +31,7 @@ module.exports = {
       { test: /\.gif/, loader: "url-loader?limit=10000&minetype=image/gif" },
       { test: /\.jpg/, loader: "url-loader?limit=10000&minetype=image/jpg" },
       { test: /\.png/, loader: "url-loader?limit=10000&minetype=image/png" },
-      { test: /\.jsx/, loader: "jsx-loader" },
+      { test: /\.jsx/, loader: "jsx-loader?harmony" },
 
       // required for bootstrap/flat-ui
       { test: /\.woff$/,   loader: "url-loader?prefix=font/&limit=5000&mimetype=application/font-woff" },
@@ -41,6 +43,13 @@ module.exports = {
   },
   plugins: [
     // If you want to minify everything
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new compression({
+      asset: "{file}.gz",
+      algorithm: "gzip",
+      regExp: /\.js$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
   ]
 };

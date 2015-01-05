@@ -1,6 +1,7 @@
-/**
- * @jsx React.DOM
- */
+/*========================================
+=            Header Component            =
+========================================*/
+"use strict";
 var React = require('react');
 require('styles/header.less');
 
@@ -23,3 +24,7 @@ var Header = React.createClass({
 });
 
 module.exports = Header;
+
+
+/*-----  End of Header Component  ------*/
+

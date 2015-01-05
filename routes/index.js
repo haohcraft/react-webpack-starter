@@ -20,4 +20,9 @@ function Routes (app) {
 		res.render("pages/home");
 	});
 
+	// Note: the "/*" is necessary here for 'react-route' 
+	app.get('/*', function(req, res, next) {
+		res.render("pages/home");
+	});
+
 }
